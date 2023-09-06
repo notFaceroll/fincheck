@@ -1,4 +1,3 @@
-import { BankAccountType } from '@prisma/client';
 import {
   IsEnum,
   IsHexColor,
@@ -6,6 +5,7 @@ import {
   IsNumber,
   IsString,
 } from 'class-validator';
+import { BankAccountType } from '../entities/BankAccount';
 
 export class CreateBankAccountDto {
   @IsString()
