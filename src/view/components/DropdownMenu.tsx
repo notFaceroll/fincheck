@@ -27,7 +27,7 @@ function DropdownMenuContent({
       <RdxDropdownMenu.Content
       sideOffset={16}
         className={cn(
-          "flex flex-col z-50 gap-2 p-2 bg-white border border-gray-100 shadow-[0px_11px_20px_0px_rgba(0,0,0,0.10)] rounded-2xl",
+          "flex flex-col z-[99] gap-2 p-2 bg-white border border-gray-100 shadow-[0px_11px_20px_0px_rgba(0,0,0,0.10)] rounded-2xl",
           "data-[side=top]:animate-slide-down-and-fade",
           "data-[side=bottom]:animate-slide-up-and-fade",
           className,

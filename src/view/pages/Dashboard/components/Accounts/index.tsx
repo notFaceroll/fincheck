@@ -8,6 +8,7 @@ import { formatCurrency } from "../../../../../app/utils/formatCurrency";
 import { cn } from "../../../../../app/utils/cn";
 import { Spinner } from "../../../../components/Spinner";
 import { PlusIcon } from "@radix-ui/react-icons";
+import { NewAccountModal } from "../../Modals/NewAccountModal";
 
 export function Accounts() {
   const {
@@ -18,6 +19,7 @@ export function Accounts() {
     toggleValuesVisibility,
     isLoading,
     accounts,
+    openNewAccountModal,
   } = useAccountsController();
 
   return (
@@ -29,6 +31,7 @@ export function Accounts() {
       )}
       {!isLoading && (
         <>
+          <NewAccountModal />
           <header>
             <span className="tracking-[-0.5px] text-white block">
               Saldo Total
@@ -58,7 +61,10 @@ export function Accounts() {
                     Minhas Contas
                   </strong>
                 </div>
-                <button className="flex flex-col items-center justify-center gap-4 mt-4 text-white border-2 border-teal-600 border-dashed h-52 rounded-2xl">
+                <button
+                  onClick={openNewAccountModal}
+                  className="flex flex-col items-center justify-center gap-4 mt-4 text-white border-2 border-teal-600 border-dashed h-52 rounded-2xl"
+                >
                   <div className="flex items-center justify-center border-2 border-white border-dashed rounded-full w-11 h-11">
                     <PlusIcon className="w-6 h-6" />
                   </div>
