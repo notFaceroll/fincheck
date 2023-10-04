@@ -24,16 +24,24 @@ const colors: Color[] = [
 interface ColorsDropdownInputProps {
   className?: string;
   error?: string;
+  onChange?: (value: string) => void;
+  value?: string;
 }
 
 export function ColorsDropdownInput({
   className,
   error,
+  onChange,
+  value,
 }: ColorsDropdownInputProps) {
-  const [selectedColor, setSelectedColor] = useState<Color | null>(null);
+  const [selectedColor, setSelectedColor] = useState<Color | null>(() => {
+    if (!value) return null;
+    return colors.find((color) => color.color === value) ?? null;
+  });
 
   function handleSelect(color: Color) {
     setSelectedColor(color);
+    onChange?.(color.color);
   }
 
   return (
@@ -48,15 +56,14 @@ export function ColorsDropdownInput({
             )}
           >
             Cor
-
             <div className="absolute -translate-y-1/2 right-3 top-1/2">
-            {selectedColor && (
-              <ColorIcon color={selectedColor.color} bg={selectedColor.bg} />
-            )}
+              {selectedColor && (
+                <ColorIcon color={selectedColor.color} bg={selectedColor.bg} />
+              )}
 
-            {!selectedColor && (
-              <ChevronDownIcon className="w-6 h-6 text-gray-800 " />
-            )}
+              {!selectedColor && (
+                <ChevronDownIcon className="w-6 h-6 text-gray-800 " />
+              )}
             </div>
           </button>
         </DropdownMenu.Trigger>

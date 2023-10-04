@@ -1,5 +1,6 @@
 import { Logo } from "../../components/Logo";
 import { UserMenu } from "../../components/UserMenu";
+import { EditAccountModal } from "./Modals/EditAccountModal";
 import { NewTransactionModal } from "./Modals/NewTransactionModal";
 import { Accounts } from "./components/Accounts";
 import { DashboardProvider } from "./components/DashboardContext";
@@ -24,6 +25,7 @@ export function Dashboard() {
         </main>
 
         <NewTransactionModal />
+        <EditAccountModal />
         <Fab />
       </div>
     </DashboardProvider>
