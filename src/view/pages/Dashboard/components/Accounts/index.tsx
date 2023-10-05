@@ -86,7 +86,6 @@ export function Accounts() {
                       isEnd: swiper.isEnd,
                     })
                   }
-                  onSwiper={(swiper) => console.log(swiper)}
                 >
                   <div
                     slot="container-start"
@@ -102,8 +101,8 @@ export function Accounts() {
                   </div>
 
                   {accounts.map((account) => (
-                    <SwiperSlide>
-                      <AccountCard key={account.id} data={account} />
+                    <SwiperSlide key={account.id}>
+                      <AccountCard data={account} />
                     </SwiperSlide>
                   ))}
                 </Swiper>

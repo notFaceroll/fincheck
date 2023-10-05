@@ -6,6 +6,8 @@ import { InputCurrency } from "../../../../components/InputCurrency";
 import { Modal } from "../../../../components/Modal";
 import { Select } from "../../../../components/Select";
 import { useEditAccountModalController } from "./useEditAccountModalController";
+import { TrashIcon } from "../../../../components/icons/TrashIcon";
+import { ConfirmDeleteModal } from "../../../../components/ConfirmDeleteModal";
 
 export function EditAccountModal() {
   const {
@@ -16,14 +18,36 @@ export function EditAccountModal() {
     handleSubmit,
     register,
     control,
-
+    handleCloseDeleteModal,
+    handleOpenDeleteModal,
+    isDeleteModalOpen,
+    handleDeleteAccount,
+    isLoadingDelete,
   } = useEditAccountModalController();
+
+  if (isDeleteModalOpen) {
+    return (
+      <ConfirmDeleteModal
+        isLoading={isLoadingDelete}
+        onConfirm={handleDeleteAccount}
+        onClose={handleCloseDeleteModal}
+        title="Tem certeza que deseja excluir esta conta?"
+        description="Ao excluir a conta, também serão excluídos todos os registros de
+    receita e despesa relacionados."
+      />
+    );
+  }
 
   return (
     <Modal
       title="Editar Conta"
       open={isEditAccountModalOpen}
       onClose={closeEditAccountModal}
+      rightAction={
+        <button onClick={handleOpenDeleteModal}>
+          <TrashIcon className="w-6 h-6 text-red-900" />
+        </button>
+      }
     >
       <form onSubmit={handleSubmit}>
         <div>
@@ -31,7 +55,6 @@ export function EditAccountModal() {
             Saldo
           </span>
           <div className="flex items-center gap-2">
-
             <span className="text-gray-600 tracking-[-0.5px] font-medium text-lg">
               R$
             </span>
@@ -39,7 +62,7 @@ export function EditAccountModal() {
             <Controller
               name="initialBalance"
               control={control}
-              defaultValue="0"
+              defaultValue={0}
               render={({ field: { onChange, value } }) => (
                 <InputCurrency
                   onChange={onChange}
@@ -48,7 +71,6 @@ export function EditAccountModal() {
                 />
               )}
             />
-
           </div>
         </div>
 
@@ -92,8 +114,8 @@ export function EditAccountModal() {
             )}
           />
 
-          <Button type="submit"isLoading={isLoading} className="w-full mt-6">
-            Criar
+          <Button type="submit" isLoading={isLoading} className="w-full mt-6">
+            Salvar
           </Button>
         </div>
       </form>
