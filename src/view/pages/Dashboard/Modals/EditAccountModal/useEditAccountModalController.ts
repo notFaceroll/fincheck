@@ -52,7 +52,7 @@ export function useEditAccountModalController() {
         id: accountToEdit!.id,
       });
       queryClient.invalidateQueries({ queryKey: ["bankAccounts"] });
-      toast.success("A conta atualizada com sucesso!");
+      toast.success("A conta foi atualizada com sucesso!");
       closeEditAccountModal();
     } catch (error) {
       toast.error("Ocorreu um erro ao salvar as alterações.");

@@ -51,6 +51,9 @@ export function useNewTransactionModalController() {
         date: data.date.toISOString(),
       });
 
+      queryClient.invalidateQueries({ queryKey: ["transactions"] });
+      queryClient.invalidateQueries({ queryKey: ["bankAccounts"] });
+
       toast.success(
         newTransactionType === "EXPENSE"
           ? "Despesa criada com sucesso"
@@ -58,8 +61,6 @@ export function useNewTransactionModalController() {
       );
 
       closeNewTransactionModal();
-
-      queryClient.invalidateQueries({ queryKey: ["transactions"] });
       reset();
     } catch (error) {
       toast.error(
