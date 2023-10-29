@@ -1,27 +1,22 @@
-# React + TypeScript + Vite
+![Logo](https://github.com/notFaceroll/fincheck-frontend/assets/64233549/f8db5fac-93ef-4cad-a6f9-c84973745d13)
+      
+> O App para salvar suas finanças e manter o controle.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![fincheck-capa](https://github.com/notFaceroll/fincheck-frontend/assets/64233549/90121721-e3b1-4dce-96e9-923f2f34efe4)
 
-Currently, two official plugins are available:
+O Fincheck é uma plataforma descomplicada e intuitiva projetada para auxiliar os usuários no gerenciamento de suas finanças pessoais.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A aplicação permite que os usuários registrem suas despesas e receitas, categorizem transações, acompanhem seus gastos e visualizem informações financeiras de maneira fácil e eficaz.
 
-## Expanding the ESLint configuration
+## Características Principais
+- Controle de Despesas e Receitas: Registre suas transações financeiras, incluindo despesas e receitas, para manter um controle claro de suas finanças.
+- Categorização: Categorize suas transações para facilitar a análise e organização das finanças.
+- Informações Financeiras: Visualize informações detalhadas sobre suas transações diretamente na interface.
+- Design Responsivo: O Fincheck é desenvolvido com um design responsivo, permitindo que os usuários acessem a aplicação em vários dispositivos, como smartphones, tablets e desktops.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Techs
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+O Fincheck é construído com uma pilha de tecnologias modernas, incluindo:
+- React, junto com React Query, React Router, React Hook Form e Zod;
+- Tailwinds CSS;
+- Radix UI;
