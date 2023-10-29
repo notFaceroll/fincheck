@@ -1,8 +1,8 @@
-![Logo](https://github.com/notFaceroll/fincheck-frontend/assets/64233549/f8db5fac-93ef-4cad-a6f9-c84973745d13)
-      
+![Logo](https://github.com/notFaceroll/fincheck-frontend/assets/64233549/2be85b5f-2f6d-46a0-bdfb-fce0cfadcbb9)
+
 > O App para salvar suas finanças e manter o controle.
 
-![fincheck-capa](https://github.com/notFaceroll/fincheck-frontend/assets/64233549/90121721-e3b1-4dce-96e9-923f2f34efe4)
+![fincheck-capa](https://github.com/notFaceroll/fincheck-frontend/assets/64233549/1d44feb0-cbeb-4462-931d-42671ac392d3)
 
 O Fincheck é uma plataforma descomplicada e intuitiva projetada para auxiliar os usuários no gerenciamento de suas finanças pessoais.
 
