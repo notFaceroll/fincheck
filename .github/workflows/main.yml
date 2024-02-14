@@ -1,0 +1,12 @@
+name: Faça uma requisição no Render a cada 14 minutos
+
+on:
+  schedule:
+    - cron: "*/14 * * * *"
+
+jobs:
+  render-request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Products
+        run: curl https://fincheckapi.onrender.com
