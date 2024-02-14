@@ -1,4 +1,4 @@
-name: Faça uma requisição no Render a cada 14 minutos
+name: 14 min req ping
 
 on:
   schedule:
@@ -8,5 +8,5 @@ jobs:
   render-request:
     runs-on: ubuntu-latest
     steps:
-      - name: Get Products
+      - name: check status
         run: curl https://fincheckapi.onrender.com
