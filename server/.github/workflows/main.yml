@@ -1,0 +1,12 @@
+name: 14 min req ping
+
+on:
+  schedule:
+    - cron: "*/14 * * * *"
+
+jobs:
+  render-request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: check status
+        run: curl https://fincheckapi.onrender.com
